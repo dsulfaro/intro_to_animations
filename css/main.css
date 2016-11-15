@@ -1,0 +1,112 @@
+/*
+black: #403F4C;
+red: #E84855;
+yellow: #F9DC5C;
+blue: #3185FC;
+pink: #EFBCD5;
+*/
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.level {
+  height: 100%;
+  width: 100%;
+  background-color: #173463;
+  color: #90b6f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.instructions {
+  width: 50%;
+  height: 80%;
+  padding: 20px;
+}
+
+.title {
+  font-family: 'Shrikhand', cursive;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.lesson {
+  font-family: 'Days One', sans-serif;
+}
+
+.editor {
+  width: 90%;
+  height: 50%;
+  background-color: #aaa;
+  display: flex;
+  justify-content: flex-start;
+  margin: auto;
+  margin-top: 60px;
+  font-family: monospace;
+  border-radius: 10px;
+}
+
+.line-numbers {
+  height: 100%;
+  width: 30px;
+  background-color: #333;
+  font-size: 18px;
+  padding-right: 5px;
+  color: #bbb;
+}
+
+.line-numbers > p {
+  float: right;
+}
+
+.css {
+  width: inherit;
+  float: left;
+  padding-left: 10px;
+  font-size: 18px;
+  color: #ddd;
+  font-family: monospace;
+}
+
+#main-input {
+  width: 70%;
+  font-size: 18px;
+  color: #333;
+  font-family: monospace;
+}
+
+#main-input:focus {
+  outline: none;
+}
+
+.display {
+  height: 98%;
+  width: 50%;
+  background-color: #070710;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#main-submit {
+  font-family: sans-serif;
+  text-align: center;
+  width: 60px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-left: 80px;
+  margin-top: 20px;
+  color: white;
+  background-color: #48ACF0;
+  border-radius: 5px;
+}
+
+#main-submit:hover {
+  background-color: #268AD0;
+}
