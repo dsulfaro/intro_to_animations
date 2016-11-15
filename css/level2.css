@@ -1,15 +1,15 @@
-#level-2-div {
-  width: 300px;
-  height: 300px;
-  background-color: blue;
+#level-2 {
+  width, height: 0;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  border-bottom: 300px solid pink;
 }
 
 @keyframes level2 {
-  0% {background-color: blue;}
-  100% {background-color: yellow;}
+  to { opacity: 0 }
 }
 
 .level-2-answer {
-  animation-name: level1;
+  animation-name: level2;
   animation-duration: 3s;
 }

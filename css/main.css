@@ -13,6 +13,11 @@ body, html {
   padding: 0;
 }
 
+code {
+  color: white;
+  font-size: 14px;
+}
+
 .level {
   height: 100%;
   width: 100%;
@@ -20,11 +25,10 @@ body, html {
   color: #90b6f4;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .instructions {
-  width: 50%;
+  width: 60%;
   height: 80%;
   padding: 20px;
 }
@@ -36,12 +40,13 @@ body, html {
 }
 
 .lesson {
-  font-family: 'Days One', sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 16px;
 }
 
 .editor {
   width: 90%;
-  height: 50%;
+  height: 45;
   background-color: #aaa;
   display: flex;
   justify-content: flex-start;
@@ -74,8 +79,15 @@ body, html {
 }
 
 #main-input {
-  width: 70%;
-  font-size: 18px;
+  width: 50%;
+  font-size: 16px;
+  color: #333;
+  font-family: monospace;
+}
+
+#main-input-3 {
+  width: 40%;
+  font-size: 16px;
   color: #333;
   font-family: monospace;
 }
@@ -86,7 +98,7 @@ body, html {
 
 .display {
   height: 98%;
-  width: 50%;
+  width: 40%;
   background-color: #070710;
   display: flex;
   justify-content: center;
@@ -97,7 +109,7 @@ body, html {
 #main-submit {
   font-family: sans-serif;
   text-align: center;
-  width: 60px;
+  border: none;
   padding: 10px 20px;
   font-size: 18px;
   margin-left: 80px;
@@ -105,8 +117,23 @@ body, html {
   color: white;
   background-color: #48ACF0;
   border-radius: 5px;
+  float: left;
 }
 
 #main-submit:hover {
   background-color: #268AD0;
+  cursor: pointer;
+}
+
+#main-continue {
+  font-family: sans-serif;
+  text-align: center;
+  width: 80px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: #48ACF0;
+  border-radius: 5px;
+  margin-left: 15px;
+  float: left;
 }
