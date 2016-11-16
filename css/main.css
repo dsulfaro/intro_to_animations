@@ -80,14 +80,7 @@ code {
 
 #main-input {
   width: 50%;
-  font-size: 16px;
-  color: #333;
-  font-family: monospace;
-}
-
-#main-input-3 {
-  width: 40%;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   font-family: monospace;
 }
