@@ -12,4 +12,5 @@
 .level-0-answer {
   animation-name: level0;
   animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
