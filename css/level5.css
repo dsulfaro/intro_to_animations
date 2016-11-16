@@ -1,0 +1,27 @@
+#level-5 {
+  width: 300px;
+  height: 300px;
+  background-color: #990000;
+}
+
+.level-5-rotation {
+  animation: rotation 1s 0s infinite ease normal;
+}
+
+@keyframes rotation {
+  to { transform: rotate(90deg) }
+}
+
+@keyframes change_color {
+  0% { background-color: #990000; }
+  20% { background-color: #cc7a00; }
+  40% { background-color: #006600; }
+  60% { background-color: #0033cc; }
+  80% { background-color: #660066; }
+  100% { background-color: #990000; }
+}
+
+.level-5-answer {
+  animation: change_color 5s 0s infinite ease normal,
+             rotation 1s 0s infinite ease normal;
+}

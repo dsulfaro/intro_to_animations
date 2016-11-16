@@ -18,6 +18,22 @@ code {
   font-size: 14px;
 }
 
+li {
+  margin-top: 2px;
+}
+
+.highlight {
+  padding: 2px 3px;
+  background-color: #6f99dc;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+a {
+  color: #ddddff;
+  text-decoration: none;
+}
+
 .level {
   height: 100%;
   width: 100%;
@@ -99,13 +115,17 @@ code {
   margin-right: 10px;
 }
 
-#main-submit {
+#buttons {
+  margin-left: 70px;
+}
+
+#buttons > button {
   font-family: sans-serif;
   text-align: center;
   border: none;
   padding: 10px 20px;
   font-size: 18px;
-  margin-left: 80px;
+  margin-left: 10px;
   margin-top: 20px;
   color: white;
   background-color: #48ACF0;
@@ -113,20 +133,17 @@ code {
   float: left;
 }
 
-#main-submit:hover {
+#buttons > button:hover {
   background-color: #268AD0;
   cursor: pointer;
 }
 
-#main-continue {
-  font-family: sans-serif;
-  text-align: center;
-  width: 80px;
-  padding: 10px 20px;
-  font-size: 18px;
-  color: white;
-  background-color: #48ACF0;
-  border-radius: 5px;
-  margin-left: 15px;
-  float: left;
+.fade {
+  animation-name: button-fade;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes button-fade {
+  to { background-color: #48ACF0 }
 }

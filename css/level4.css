@@ -1,0 +1,29 @@
+#level-4{
+
+}
+
+#one, #two, #three {
+ width:0px;
+ height:0px;
+ border-bottom: 100px solid gold;
+ border-left: 75px solid transparent;
+ border-right: 75px solid transparent;
+}
+
+#one {
+margin-left: 125px;
+}
+
+#two, #three {
+ float: left;
+ position: relative;
+ left: 50px;
+}
+
+@keyframes blink {
+  to { opacity: 0 }
+}
+
+.level-4-answer {
+  animation: blink 0.05s 0.5s infinite linear alternate;
+}

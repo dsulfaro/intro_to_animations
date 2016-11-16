@@ -57,7 +57,7 @@
   animation-name: rotator;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(1,.015,.295,1.225);
 }
 
 .level-3-answer {
