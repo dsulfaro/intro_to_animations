@@ -1,0 +1,31 @@
+#level-9 {
+  width: 500px;
+  height: 500px;
+  background-color: #660000;
+  position: relative;
+  border-radius: 20px;
+}
+
+.base {
+  height: 94%;
+  width: 94%;
+  background-color: #993399;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -47% 0 0 -47%;
+  border-radius: 20px;
+}
+
+.extra {
+  background: #070710;
+  border-radius: 20px;
+}
+
+@keyframes animate {
+  to { transform: rotate(360deg); }
+}
+
+.final-animate {
+  animation: animate 10s infinite ease-in-out alternate;
+}

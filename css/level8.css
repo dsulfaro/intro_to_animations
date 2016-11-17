@@ -1,0 +1,31 @@
+#level-8 {
+  background-color: #eee;
+  width: 600px;
+  height: 300px;
+  border-radius: 1px;
+}
+
+.back {
+  color: black;
+}
+
+#line{
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid red;
+}
+
+.l {
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid blue;
+}
+
+@keyframes spin {
+  to { transform: rotateX(180deg); }
+}
+
+.level-8-answer {
+  animation: spin 2s 0.5s 1 ease-in normal;
+  animation-fill-mode: forwards;
+}
