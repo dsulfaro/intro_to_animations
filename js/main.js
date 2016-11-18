@@ -56,7 +56,7 @@ const DIVS = ["<div id='level-0'></div>",
 class Game {
 
   constructor() {
-    this.level = 9;
+    this.level = 0;
     this.titles = TITLES;
     this.lectures = LECTURES;
     this.editor = EDITOR;
