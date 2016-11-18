@@ -1,31 +1,28 @@
-## Intro to CSS3 Animations
+## 'I Can Animate and So Can You!'
 
-### Background
-With CSS3 came animations which allow you to rotate, fade, twist, shift and just about any other animation you can think of without the use of Javascript. They can seem a little daunting at first so I wanted to create this small game in order to help coders learn this handy animations.
+[Live](http://dansulfaro.com/intro_to_animations/)
 
-### Functionality and MVP
-With this small game, users will be able to:
-- progress through a series of 10 levels each with a mini lesson and coding exercise
-- each exercise will have an input field in which the user must enter the correct code to create the animation
-- the user won't be able to progress to the next level without entering the correct solution for the current level first
+![](docs/screenshots/level1.jpg)
+### Intro
+'I Can Animate and So Can You!' is a 10-level quiz meant to act as an introduction to CSS3 Animations. I found Flexbox Froggy by Thomas Park a great tutorial on using Flex in CSS, but I noticed no such quiz existed for CSS3 animations which can be quite powerful and are easy to use so I used Park's site as my inspiration.
 
-### Wireframes
-The app will consist of a single page which scrolls vertically. Each frame will have a mini lesson in plain text, a text field right below that for input. And an area to the right that will display the animation.
-![](wireframe.png)
+### Implementation
+The app contains a single html file that acts as a template for 5 fields:
+- Title
+- Lesson
+- Editor
+- Display
+- Solution
 
-### Architecture and Technologies
-The app will be implemented using jQuery. I'm going to parse the input and see if it matches the correct solution. If it does, I will add the appropriate class which will then trigger the animation and allow the user to progress.
+#### Rendering
+I use a Game class to hold all of my game logic. The class has a level instance variable which is incremented every time the user inputs the correct solution.
+![](docs/screenshots/loadLevels)
+Included in the class are 5 arrays that hold all the data for each section of the html page. When a level is loaded, I use the current level as the index for these arrays, and I use jQuery's .html method to load each section.
 
-### Implementation Timeline
-**Day 1** Design the "curriculum" of the game with all 10 levels, their problems and solutions all laid out and create intro page.
+#### Solution Checking
+![](docs/screenshots/check.jpg)
+I opted for string matching rather than rendering the user's input on the fly due to my time constraint. With regular CSS, I could set an interval on the keydown event of the input, parse the string, and then use jquery's .css method to render on the fly, however animations are not as simple and would require manipulation of the CSS Object Model.
 
-**Day 2** Levels 1-4
-
-**Day 3** Levels 5-7
-
-**Day 4** Levels 8-10
-
-### Bonus Features
-At the moment, I'm sort of cheating when it comes to checking the user's solutions. I'm parsing the string and seeing if it matches the answer and if it does, I'll append the class that actually contains the animation to that element which will then trigger the animation.
-
-Basically, the user's input won't actually be rendered on the fly. Depending on how implementation goes, I may be able to do some extreme parsing and render the user's input as they are typing, but only if time allows.
+#### Triggering Animations
+![](docs/screenshots/animation.jpg)
+To trigger the animation, I put the CSS that triggers the animation in a class and then use the .addClass method to append the level-#-answer class to the display div.
