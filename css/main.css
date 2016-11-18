@@ -46,18 +46,19 @@ a {
 .instructions {
   width: 60%;
   height: 80%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .title {
   font-family: 'Shrikhand', cursive;
-  font-size: 30px;
+  font-size: 26px;
   letter-spacing: 3px;
 }
 
 .lesson {
   font-family: 'Cabin Condensed', sans-serif;
   font-size: 16px;
+  margin-top: -10px;
 }
 
 .editor {
@@ -67,7 +68,7 @@ a {
   display: flex;
   justify-content: flex-start;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 40px;
   font-family: monospace;
   border-radius: 10px;
 }
