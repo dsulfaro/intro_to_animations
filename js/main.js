@@ -142,7 +142,7 @@ class Game {
       this.applySolution();
     }
     else {
-      alert("wrong: " + this.solutions[this.level]);
+      alert("Incorrect. Carefully read the instructions.");
     }
   }
 }
