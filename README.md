@@ -16,6 +16,7 @@ The app contains a single html file that acts as a template for 5 fields:
 
 #### Rendering
 I use a Game class to hold all of my game logic. The class has a level instance variable which is incremented every time the user inputs the correct solution.
+
 ![](docs/screenshots/loadLevels.jpg)
 
 Included in the class are 5 arrays that hold all the data for each section of the html page. When a level is loaded, I use the current level as the index for these arrays, and I use jQuery's .html method to load each section.
