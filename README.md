@@ -30,3 +30,8 @@ I opted for string matching rather than rendering the user's input on the fly du
 ![](docs/screenshots/animation.jpg)
 
 To trigger the animation, I put the CSS that triggers the animation in a class and then use the .addClass method to append the level-#-answer class to the display div.
+
+#### Future Implementations
+- Navigation bar to switch between lessons
+- Victory animations/modal for submitting correct answer
+- Rendering user CSS on the fly
