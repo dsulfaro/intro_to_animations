@@ -112,6 +112,7 @@ a {
   background-color: #070710;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin-right: 10px;
 }
@@ -147,4 +148,23 @@ a {
 
 @keyframes button-fade {
   to { background-color: #48ACF0 }
+}
+
+@keyframes error {
+  to { background-color: white; }
+}
+
+.err {
+  width: 40%;
+  font-size: 14px;
+  color: #333;
+  font-family: monospace;
+  outline: none;
+  border: none;
+  padding: 2px;
+  background-color: red;
+  animation-name: error;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }

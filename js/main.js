@@ -67,7 +67,7 @@ class Game {
   }
 
   loadLevel() {
-    $(".title").html(this.titles[this.level]);
+    // $(".title").html(this.titles[this.level]);
     $(".lecture").html(this.lectures[this.level]);
     $(".editor-css").html(this.editor[this.level]);
     $(".level-div").html(this.divs[this.level]);
@@ -87,8 +87,15 @@ class Game {
       this.applySolution();
     }
     else {
-      alert("Incorrect. Carefully read the instructions.");
+      this.flashError();
     }
+  }
+
+  flashError() {
+    $("#main-input").addClass('err');
+    setTimeout(() => {
+      $("#main-input").removeClass('err')
+    }, 2000)
   }
 }
 
