@@ -11,6 +11,10 @@ class Game {
     this.checkSolution = this.checkSolution.bind(this);
     this.advanceLevel = this.advanceLevel.bind(this);
     this.applySolution = this.applySolution.bind(this);
+    this.listenForSubmit = this.listenForSubmit.bind(this);
+    this.listenForContinue = this.listenForContinue.bind(this);
+    this.listenForNav = this.listenForNav.bind(this);
+    this.listenForCheater = this.listenForCheater.bind(this);
   }
 
   activateContinue() {
@@ -41,6 +45,13 @@ class Game {
 
   start() {
     this.loadLevel();
+    this.listenForSubmit();
+    this.listenForContinue();
+    this.listenForNav();
+    this.listenForCheater();
+  }
+
+  listenForSubmit() {
     $("#main-submit").click(() => {
       if (this.level === 9) {
         $('.extra').addClass('final-animate');
@@ -55,6 +66,9 @@ class Game {
         this.checkSolution($("#main-input").val())
       }
     });
+  }
+
+  listenForContinue() {
     $("#main-continue").click(() => {
       if (this.level === 9){
         this.level = 0;
@@ -66,8 +80,43 @@ class Game {
     });
   }
 
+  listenForNav() {
+    $(".arrow-left").click(() => {
+      if (this.level > 0) {
+        this.level -= 1;
+        this.loadLevel();
+      }
+      else {
+        this.level = 9;
+        this.loadLevel();
+      }
+    });
+    $(".arrow-right").click(() => {
+      if (this.level == 9) {
+        this.level = 0;
+        this.loadLevel();
+      }
+      else {
+        this.advanceLevel();
+      }
+    })
+  }
+
+  listenForCheater() {
+    $("#reveal").click(() => {
+      if (this.level == 9){
+        $('.extra').addClass('final-animate');
+        this.activateContinue();
+      }
+      else {
+        $("#main-input").val(FORMATTED_SOLUTIONS[this.level]);
+        this.applySolution();
+      }
+    });
+  }
+
   loadLevel() {
-    // $(".title").html(this.titles[this.level]);
+    $("#current-level").text(`Level ${this.level + 1} out of 10`)
     $(".lecture").html(this.lectures[this.level]);
     $(".editor-css").html(this.editor[this.level]);
     $(".level-div").html(this.divs[this.level]);
@@ -106,6 +155,7 @@ $(document).ready(function(){
 
 // -- LEVELS -- //
 
+// Not using these to make room for nav bar
 const TITLES = ["Welcome to 'I Can Animate and So Can You!'",
                 "@keyframes Are Your Friend!",
                 "Telling the Thing to Animate the Stuff",
@@ -117,7 +167,7 @@ const TITLES = ["Welcome to 'I Can Animate and So Can You!'",
                 "Transforms Part 2: Electric Boogaloo",
                 "That's All Folks!"]
 
-const LECTURES = ["Are you tired of using Javascript or one of its libraries to animate elements on your site? Do you wish there were a better way?<br><br> Well hold onto your cap.<br><br> CSS3 Animations save the day! Below is an example of a simple animation. See if you can change the background-color from red to purple. Fret not, we will break down what is happening in a moment.",
+const LECTURES = ["Are you tired of using Javascript or one of its libraries to animate elements on your site? Do you wish there were a better way?<br><br> Well hold onto your hat.<br><br> CSS3 Animations save the day! Below is an example of a simple animation. See if you can change the background-color from red to purple. Fret not, we will break down what is happening in a moment.",
 "The key component (see what I did there?) to CSS3 animations are <code class='highlight'>@keyframes</code> They tell an element what style it has at a given time.<br><br><code>@keyframes color_change{<br>  from { background-color: red; } <br>  to { background-color: purple; }<br>}</code><br><br><code class='highlight'>@keyframes</code> are where an animation is created. Think of it as a timeline where different styles are declared at different stages. Note: <code class='highlight'>color_change</code> is simply the name of the animation.<br><br>Let's change a square into a circle and back to a square again. Change the <code class='highlight'>border-radius</code> to <code class='highlight'>150px</code> at <code class='highlight'>50%</code>. Notice we are using percentages here rather than <code class='highlight'>to</code> and <code class='highlight'>from</code>. We'll talk about this next.",
 "The percentages and <code class='highlight'>to</code> and <code class='highlight'>from</code> in the previous examples are the intervals telling the animation what style to render at a given time. Take a look below:<pre><code>@keyframes circle-ify{<br>  0% { border-radius: 0px; } <br>  50% { border-radius: 150px; }<br> 100% { border-radius: 0px; } <br>}</code><br><br><code>div{<br> width, height: 300px; <br> background-color: green; <br> animation-name: circle-ify; <br> animation-duration: 3s;<br>}</code></pre><code class='highlight'>animation-name</code> is how you attach an animation to an element, and <code class='highlight'>animation-duration</code> sets the time it takes the animation to run. So, at 0s (0%), the border-radius is 0px, at 1.5s (50% of the way through the animation) the border-radius is 150px, and then back to 0px for the end of the animation (100%). Assign the <code class='highlight'>fade</code> animation to the triangle in the editor below and watch it fade!.",
 "The <code class='highlight'>animation-timing-function</code> attribute allows for different speeds for the animation, and can take the following values.<ul id='timings'><li>linear</li><li>ease</li><li>ease-in</li><li>ease-out</li><li>ease-in-out</li><li>cubic-bezier</li></ul>Set <code class='highlight'>ease-in-out</code> as the timing function below to help the little blue guy out!",
@@ -148,6 +198,17 @@ const SOLUTIONS = ["background-color:purple",
 "cubic-bezier(0.975,0.000,0.915,0.990)",
 "transform:translate(-1200px,210px)",
 "rotateX(180deg)",
+""]
+
+const FORMATTED_SOLUTIONS = ["background-color: purple;",
+"border-radius: 150px;",
+"fade;",
+"ease-in-out;",
+"blink 0.05s 0.5s infinite linear alternate;",
+"change-color 5s 0s infinite ease normal;",
+"cubic-bezier(0.975, 0.000, 0.915, 0.990);",
+"transform: translate(-1200px,210px);",
+"rotateX(180deg);",
 ""]
 
 const DIVS = ["<div id='level-0'></div>",

@@ -43,6 +43,32 @@ a {
   justify-content: space-around;
 }
 
+#top-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+#level-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#level-counter > * {
+  margin: 5px;
+}
+
+#level-counter > span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#current-level {
+  font-family: 'Cabin Condensed', sans-serif;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
 .instructions {
   width: 60%;
   height: 80%;
@@ -138,6 +164,7 @@ a {
 #buttons > button:hover {
   background-color: #268AD0;
   cursor: pointer;
+
 }
 
 .fade {
@@ -167,4 +194,13 @@ a {
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+}
+
+#buttons > #reveal {
+  outline: none;
+}
+
+#buttons > #reveal:hover {
+  outline: none;
+  background-color: #d88500;
 }

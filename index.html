@@ -24,7 +24,14 @@
     <!-- LEVEL 1 -->
     <section class="level">
       <section class="instructions">
-        <h1 class="title">I Can Animate and So Can You!</h1>
+        <div id="top-line">
+          <h1 class="title">I Can Animate and So Can You!</h1>
+          <div id='level-counter'>
+            <span class="arrow-left">◀</span>
+            <h4 id="current-level"></h4>
+            <span class="arrow-right">▶</span>
+          </div>
+        </div>
         <section class="lesson">
           <p class="lecture"></p>
         </section>
@@ -39,6 +46,7 @@
         <div id="buttons">
           <button id="main-submit">Submit</button>
           <button id="main-continue">Continue</button>
+          <button id="reveal" style="background-color:#ff9d00">Solution</button>
         </div>
       </section>
       <section class="display">
