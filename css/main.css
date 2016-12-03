@@ -72,7 +72,7 @@ a {
 .instructions {
   width: 60%;
   height: 80%;
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 .title {
@@ -83,8 +83,7 @@ a {
 
 .lesson {
   font-family: 'Cabin Condensed', sans-serif;
-  font-size: 16px;
-  margin-top: -10px;
+  font-size: 18px;
 }
 
 .editor {
@@ -116,7 +115,7 @@ a {
   width: inherit;
   float: left;
   padding-left: 10px;
-  font-size: 18px;
+  font-size: 120%;
   color: #ddd;
   font-family: monospace;
 }

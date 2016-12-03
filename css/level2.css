@@ -1,8 +1,8 @@
 #level-2 {
   width, height: 0;
-  border-left: 300px solid transparent;
-  border-right: 300px solid transparent;
-  border-bottom: 300px solid pink;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid pink;
 }
 
 @keyframes level2 {
